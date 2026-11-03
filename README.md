@@ -42,6 +42,10 @@ neurointent --source physionet --subject 3 --output artifacts/subject-003.json
 
 ## Evaluation contract
 
+### Verified first experiment
+
+Subject S001: 45 trials, 64 EEG channels, three held-out-run folds. CSP + LDA achieved **64.3% balanced accuracy** (kappa 0.287), compared with **60.4%** for log-variance + logistic regression and **50.0%** for the majority baseline. This is a small, single-subject check, not evidence of population-level performance or statistical significance. Full fold scores and environment versions are in [the recorded benchmark](docs/benchmark-subject-001.json).
+
 Labels are `0=left`, `1=right`. Confusion-matrix rows are true labels; columns are predictions. Each test trial appears in exactly one fold. Aggregate metrics use pooled out-of-fold predictions, with per-run scores reported separately. Model settings are fixed in advance; selecting a model after looking at these scores requires new independent test data.
 
 This is **within-subject, held-out-run evaluation**, not cross-subject or cross-day validation. Filtering uses the full recording offline, including future samples. This is not a causal streaming system. There is no hardware integration, clinical validation, artifact rejection by amplitude, or claim that it can read arbitrary thoughts. EEG artifacts and subject variability remain important limitations.

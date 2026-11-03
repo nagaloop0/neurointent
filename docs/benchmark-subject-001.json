@@ -1,0 +1,156 @@
+{
+  "dataset": {
+    "source": "physionet-eegmmidb-1.0.0",
+    "subject": 1,
+    "runs": [
+      4,
+      8,
+      12
+    ],
+    "sfreq": 160.0,
+    "epoch_seconds": [
+      1,
+      3.5
+    ],
+    "bandpass_hz": [
+      8,
+      30
+    ],
+    "counts": {
+      "4": {
+        "kept": 15,
+        "events": 15
+      },
+      "8": {
+        "kept": 15,
+        "events": 15
+      },
+      "12": {
+        "kept": 15,
+        "events": 15
+      }
+    },
+    "doi": "10.13026/C28G6P"
+  },
+  "n_trials": 45,
+  "n_channels": 64,
+  "class_order": [
+    "left",
+    "right"
+  ],
+  "protocol": "leave-one-run-out; within-subject; offline; no hyperparameter search",
+  "environment": {
+    "python": "3.15.2",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "mne": "1.13.2",
+    "scikit-learn": "1.9.1"
+  },
+  "models": {
+    "majority": {
+      "accuracy": 0.5111111111111111,
+      "balanced_accuracy": 0.5,
+      "cohen_kappa": 0.0,
+      "confusion_matrix": [
+        [
+          23,
+          0
+        ],
+        [
+          22,
+          0
+        ]
+      ],
+      "folds": [
+        {
+          "held_out_run": 4,
+          "n_train": 30,
+          "n_test": 15,
+          "balanced_accuracy": 0.5
+        },
+        {
+          "held_out_run": 8,
+          "n_train": 30,
+          "n_test": 15,
+          "balanced_accuracy": 0.5
+        },
+        {
+          "held_out_run": 12,
+          "n_train": 30,
+          "n_test": 15,
+          "balanced_accuracy": 0.5
+        }
+      ]
+    },
+    "logvar_logreg": {
+      "accuracy": 0.6,
+      "balanced_accuracy": 0.6037549407114624,
+      "cohen_kappa": 0.20588235294117652,
+      "confusion_matrix": [
+        [
+          10,
+          13
+        ],
+        [
+          5,
+          17
+        ]
+      ],
+      "folds": [
+        {
+          "held_out_run": 4,
+          "n_train": 30,
+          "n_test": 15,
+          "balanced_accuracy": 0.625
+        },
+        {
+          "held_out_run": 8,
+          "n_train": 30,
+          "n_test": 15,
+          "balanced_accuracy": 0.6071428571428572
+        },
+        {
+          "held_out_run": 12,
+          "n_train": 30,
+          "n_test": 15,
+          "balanced_accuracy": 0.5982142857142857
+        }
+      ]
+    },
+    "csp_lda": {
+      "accuracy": 0.6444444444444445,
+      "balanced_accuracy": 0.6432806324110671,
+      "cohen_kappa": 0.28712871287128705,
+      "confusion_matrix": [
+        [
+          16,
+          7
+        ],
+        [
+          9,
+          13
+        ]
+      ],
+      "folds": [
+        {
+          "held_out_run": 4,
+          "n_train": 30,
+          "n_test": 15,
+          "balanced_accuracy": 0.75
+        },
+        {
+          "held_out_run": 8,
+          "n_train": 30,
+          "n_test": 15,
+          "balanced_accuracy": 0.5982142857142857
+        },
+        {
+          "held_out_run": 12,
+          "n_train": 30,
+          "n_test": 15,
+          "balanced_accuracy": 0.625
+        }
+      ]
+    }
+  }
+}
